@@ -3,7 +3,7 @@ int main()
 {
     int p,n,sum,diff,prod,quo;
     
-    printf("enter the numbers p,n");
+    printf("enter these numbers p,n");
     scanf("%d,%d",&p,&n);
     
     sum = p+n;

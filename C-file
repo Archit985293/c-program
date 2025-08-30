@@ -3,7 +3,7 @@ int main()
 {
     int p,n,sum;
     
-    printf("enter the numbers p,n");
+    printf("enter the numbers like p,n");
     scanf("%d,%d",&p,&n);
     
     sum = p+n;

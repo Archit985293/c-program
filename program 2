@@ -1,0 +1,17 @@
+#include <stdio.h>
+int main()
+{
+    int p,n,sum,diff,prod,quo;
+    
+    printf("enter the numbers p,n");
+    scanf("%d,%d",&p,&n);
+    
+    sum = p+n;
+    diff = p-n;
+    prod = p*n;
+    quo = p/n;
+    printf("%d\n",sum);
+    printf("%d\n",diff);
+    printf("%d\n",quo);
+    printf("%d\n",prod);
+}    

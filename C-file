@@ -1,0 +1,11 @@
+#include <stdio.h>
+int main()
+{
+    int p,n,sum;
+    
+    printf("enter the numbers p,n");
+    scanf("%d,%d",&p,&n);
+    
+    sum = p+n;
+    printf("%d\n",sum);
+}    

@@ -1,0 +1,14 @@
+#include<stdio.h>
+#include<math.h>
+int main()
+{
+  float princ,rate,times,si,n,A,CI;
+  printf("enter the princ,rate,times,n");
+  scanf("%f %f %f %f",&princ,&rate,&times,&n);
+  
+  si = (rate*times*princ)/100;
+  A = princ*pow((1+(rate/(100*n))),n*times);
+  CI = A-princ;
+  printf("%f\n%f\n%f\n",si,A,CI);
+  return 0;
+}

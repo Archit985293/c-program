@@ -1,0 +1,12 @@
+#include <stdio.h>
+int main()
+{
+    int len,breadth,area,perimeter;
+    printf("enter the values of len,breadth");
+    scanf("%d,%d",&len,&breadth);
+    
+    perimeter = 2*(len+breadth);
+    area = len*breadth;
+    printf("%d\n,%d\n",area,perimeter);
+    return 0;
+}

@@ -1,0 +1,14 @@
+#include <stdio.h>
+int main()
+{
+  int p,n,dumnum;
+  printf("enter the values of p,n");
+  scanf("%d,%d",&p,&n);
+  
+  dumnum = p;
+  p = n;
+  n = dumnum;
+  printf("%d\n",p);
+  printf("%d\n",n);
+  return 0;
+}

@@ -1,0 +1,13 @@
+#include <stdio.h>
+int main()
+{
+    float sec,hours,minutes;
+    printf("enter the time in seconds");
+    scanf("%f",&sec);
+    
+    hours = sec/(60*60);
+    minutes = sec/60;
+    printf("%f\n %f\n %f\n",hours,minutes,sec);
+    return 0;
+}
+    

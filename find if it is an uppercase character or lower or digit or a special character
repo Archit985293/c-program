@@ -1,0 +1,17 @@
+#include <stdio.h>
+#include <ctype.h>
+int main()
+{
+    char a;
+    printf("enter any character");
+    scanf("%c",&a);
+   if(islower(a))
+        printf("this an lowercase character");
+   else if(isupper(a))
+        printf("this is an uppercase character");
+   else if(isdigit(a))
+        printf("this an integer");
+   else
+        printf("this is a special character");
+   return 0;
+}    

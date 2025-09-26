@@ -1,0 +1,36 @@
+include <stdio.h>
+int main()
+{
+    char i;
+    int x,y,cal;
+    printf("enter the numbers x,y and operation you want");
+    scanf("%d %d %c",&x,&y,&i);
+    switch(i)
+    {
+        case '+':
+            cal= x+y;
+            ("result: %d\n",cal);
+            break;
+        case '-':
+            cal= x-y;
+            ("result: %d\n",cal);
+            break;
+        case '/':
+            if(y != 0)
+                cal= x/y;
+                printf("result: %d\n",cal);
+                break;
+        case '%':
+            cal= x%y;
+            printf("result: %d\n",cal);
+            break;
+        case '*':
+            cal= x*y;
+            printf("result: %d\n",cal);
+            break;
+        default:
+            printf("error: invalid operator entered.\n");
+        
+    }   
+    return 0;
+}

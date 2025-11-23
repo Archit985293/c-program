@@ -1,0 +1,18 @@
+#include <stdio.h>
+
+int main() 
+{    int n;
+    long long multiply = 1;
+
+    printf("Enter a value for n: ");
+    scanf("%d", &n);  // Must use &n
+
+    for(int i = 2; i <= n; i += 2) 
+    {    
+        multiply *= i;
+
+    }
+    printf("The multiplication of even numbers from 1 to %d is: %lld\n", n, multiply);
+
+    return 0;
+}

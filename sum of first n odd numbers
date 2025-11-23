@@ -1,0 +1,17 @@
+#include <stdio.h>
+
+int main() {
+    int n, sum = 0;
+
+    printf("Enter a value for n: ");
+    scanf("%d", &n);  // Must use &n
+
+    for(int i = 1; i <= n; i++) {
+        sum += 2*i - 1;  // Correct formula for ith odd number
+        printf("i=%d, odd=%d, sum=%d\n", i, 2*i-1, sum); // Debug line
+    }
+
+    printf("The sum of the first %d odd numbers is: %d\n", n, sum);
+
+    return 0;
+}

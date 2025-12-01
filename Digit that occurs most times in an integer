@@ -1,0 +1,35 @@
+#include <stdio.h>
+
+int main() {
+    long long num;
+    int count[10] = {0}; // array to count occurrences of digits 0-9
+
+    printf("Enter an integer number: ");
+    scanf("%lld", &num);
+
+    // Handle negative numbers
+    if (num < 0) {
+        num = -num;
+    }
+
+    // Count digits
+    while (num > 0) {
+        int digit = num % 10;
+        count[digit]++;
+        num /= 10;
+    }
+
+    // Find the digit with maximum count
+    int maxCount = count[0];
+    int digitMax = 0;
+    for (int i = 1; i < 10; i++) {
+        if (count[i] > maxCount) {
+            maxCount = count[i];
+            digitMax = i;
+        }
+    }
+
+    printf("Digit %d occurs the most (%d times).\n", digitMax, maxCount);
+
+    return 0;
+}

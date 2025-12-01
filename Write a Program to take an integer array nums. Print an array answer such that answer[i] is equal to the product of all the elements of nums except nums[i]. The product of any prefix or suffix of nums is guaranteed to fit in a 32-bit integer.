@@ -1,0 +1,36 @@
+#include <stdio.h>
+
+int main() {
+    int n;
+    printf("Enter size of array: ");
+    scanf("%d", &n);
+
+    int nums[200], answer[200];
+    for(int i = 0; i < n; i++)
+        scanf("%d", &nums[i]);
+
+    // Initialize prefix products
+    int prefix[200], suffix[200];
+
+    prefix[0] = 1;
+    for(int i = 1; i < n; i++)
+        prefix[i] = prefix[i-1] * nums[i-1];
+
+    // Initialize suffix products
+    suffix[n-1] = 1;
+    for(int i = n-2; i >= 0; i--)
+        suffix[i] = suffix[i+1] * nums[i+1];
+
+    // Compute answer
+    for(int i = 0; i < n; i++)
+        answer[i] = prefix[i] * suffix[i];
+
+    // Print answer
+    for(int i = 0; i < n; i++) {
+        printf("%d", answer[i]);
+        if(i != n-1) printf(", ");
+    }
+    printf("\n");
+
+    return 0;
+}

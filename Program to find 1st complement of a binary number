@@ -1,0 +1,28 @@
+#include <stdio.h>
+
+int main() {
+    long long binary, digit;
+    long long onesComp = 0, place = 1;
+
+    printf("Enter a binary number: ");
+    scanf("%lld", &binary);
+
+    long long temp = binary;
+
+    while (temp > 0) {
+        digit = temp % 10;     // extract last binary digit
+
+        // Flip the bit: 1 -> 0, 0 -> 1
+        if (digit == 0)
+            onesComp += 1 * place;
+        else
+            onesComp += 0 * place;
+
+        place *= 10;
+        temp /= 10;
+    }
+
+    printf("1's complement = %lld\n", onesComp);
+
+    return 0;
+}

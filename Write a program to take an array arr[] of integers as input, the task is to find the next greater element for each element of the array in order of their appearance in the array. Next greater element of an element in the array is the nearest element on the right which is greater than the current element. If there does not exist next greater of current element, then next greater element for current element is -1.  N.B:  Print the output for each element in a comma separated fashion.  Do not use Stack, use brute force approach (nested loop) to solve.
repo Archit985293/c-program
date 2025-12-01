@@ -1,0 +1,33 @@
+#include <stdio.h>
+
+int main() {
+    int n;
+    printf("Enter size of array: ");
+    scanf("%d", &n);
+
+    int arr[200], nextGreater[200];
+
+    printf("Enter array elements:\n");
+    for(int i = 0; i < n; i++)
+        scanf("%d", &arr[i]);
+
+    // Brute-force nested loop
+    for(int i = 0; i < n; i++) {
+        nextGreater[i] = -1; // default if no greater element
+        for(int j = i + 1; j < n; j++) {
+            if(arr[j] > arr[i]) {
+                nextGreater[i] = arr[j];
+                break; // nearest greater found
+            }
+        }
+    }
+
+    // Print in comma-separated format
+    for(int i = 0; i < n; i++) {
+        printf("%d", nextGreater[i]);
+        if(i != n - 1) printf(", ");
+    }
+    printf("\n");
+
+    return 0;
+}

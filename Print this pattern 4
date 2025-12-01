@@ -1,0 +1,32 @@
+#include <stdio.h>
+
+int main() {
+    int n = 5; // number of rows
+
+    int totalWidth = n; // width of the bottom row
+
+    // Print the number pyramid
+    for (int i = 1; i <= n; i++) {
+        int start = n - i + 1; // first number in the row
+
+        // print leading spaces
+        for (int s = 1; s < start; s++) {
+            printf(" ");
+        }
+
+        // print numbers from start to n
+        for (int j = start; j <= n; j++) {
+            printf("%d", j);
+        }
+
+        printf("\n");
+    }
+
+    // Print stars row with same width as bottom row
+    for (int i = 1; i <= totalWidth; i++) {
+        printf("*");
+    }
+    printf("\n");
+
+    return 0;
+}

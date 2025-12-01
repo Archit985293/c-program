@@ -1,0 +1,39 @@
+#include <stdio.h>
+
+int findCeil(int arr[], int n, int x) {
+    int low = 0, high = n - 1;
+    int ans = -1;
+
+    while (low <= high) {
+        int mid = (low + high) / 2;
+
+        if (arr[mid] >= x) {
+            ans = mid;       // potential ceil
+            high = mid - 1;  // try to find smaller index
+        } else {
+            low = mid + 1;   // go right
+        }
+    }
+    return ans;
+}
+
+int main() {
+    int n, x;
+    int arr[200];
+
+    printf("Enter size of array: ");
+    scanf("%d", &n);
+
+    printf("Enter sorted array elements:\n");
+    for (int i = 0; i < n; i++)
+        scanf("%d", &arr[i]);
+
+    printf("Enter x: ");
+    scanf("%d", &x);
+
+    int index = findCeil(arr, n, x);
+
+    printf("%d\n", index);
+
+    return 0;
+}

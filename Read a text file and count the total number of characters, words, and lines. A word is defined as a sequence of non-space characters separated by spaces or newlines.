@@ -1,0 +1,42 @@
+#include <stdio.h>
+#include <ctype.h>
+
+int main() {
+    FILE *fp;
+    char ch;
+    int characters = 0, words = 0, lines = 0;
+    int inWord = 0; // flag to track if inside a word
+
+    // Open file in read mode
+    fp = fopen("info.txt", "r");
+    if(fp == NULL) {
+        printf("Error opening file. Make sure 'info.txt' exists.\n");
+        return 1;
+    }
+
+    while((ch = fgetc(fp)) != EOF) {
+        characters++;
+
+        if(ch == '\n') {
+            lines++;
+        }
+
+        if(isspace(ch)) {
+            inWord = 0; // word ended
+        } else if(inWord == 0) {
+            inWord = 1; // new word started
+            words++;
+        }
+    }
+
+    // If file is not empty and last line doesn't end with newline, count it
+    if(characters > 0 && ch != '\n')
+        lines++;
+
+    printf("Total characters: %d\n", characters);
+    printf("Total words: %d\n", words);
+    printf("Total lines: %d\n", lines);
+
+    fclose(fp);
+    return 0;
+}

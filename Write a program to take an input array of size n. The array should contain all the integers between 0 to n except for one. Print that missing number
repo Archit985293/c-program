@@ -1,0 +1,24 @@
+#include <stdio.h>
+
+int main() {
+    int n;
+    printf("Enter size of array (n): ");
+    scanf("%d", &n);
+
+    int arr[200];
+    printf("Enter array elements (size n, numbers 0 to n with one missing):\n");
+    for(int i = 0; i < n; i++)
+        scanf("%d", &arr[i]);
+
+    int totalSum = n * (n + 1) / 2; // sum of numbers from 0 to n
+    int arrSum = 0;
+
+    for(int i = 0; i < n; i++)
+        arrSum += arr[i];
+
+    int missing = totalSum - arrSum;
+
+    printf("%d\n", missing);
+
+    return 0;
+}
